@@ -1,0 +1,13 @@
+;                   REGISTER INDIRECT MEMORY LAB TASK-1
+                                                     
+                                                     
+org 100h     ;ORG 100h is a compiler directive (it tells compiler how to handle the source code)
+             ;on this case we tell the compiler we are working with variables if I'm not wrong :) 
+MOV DI,2000H ;move destination index to 2000h.
+MOV AX,0001H ;initial variable.
+MOV CL,05H   ;set CL to 06H;On every loop CL's value decrease 1. 
+ABC:MOV [DI],AX  ; Move AX to destination index on memory 
+ADD DI,0001H ;increment destination index by 1.
+ADD AX,0001H ;add to AX
+LOOP ABC     ;loop ends when CL == 00H
+HLT          ;halt the emulator.
